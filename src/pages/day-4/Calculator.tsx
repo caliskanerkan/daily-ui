@@ -19,14 +19,14 @@ export const Calculator = () => {
         <Button className="rounded-full flex items-center justify-center h-[52px]" bg={COLOR.GRAY}>
           C
         </Button>
+        <div className="col-span-3"></div>
         {keys.flat().map((key) => {
-          const disabled = typeof key === 'string';
-
+          const colorless = typeof key === 'string';
+          const bg = colorless ? COLOR.GRAY : COLOR.INDIGO;
           return (
             <Button
-              bg={COLOR.INDIGO}
+              bg={bg}
               key={key}
-              disabled={disabled}
               className="rounded-full flex items-center justify-center h-[52px]"
             >
               {key}
